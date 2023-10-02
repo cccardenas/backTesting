@@ -2,6 +2,7 @@ const User = require("../models/User");
 
 async function login(email, password) {
   try {
+    console.log(email);
     const user = await User.findOne({ email, password });
     if (user) {
       return { success: true, message: "Login successful" };
