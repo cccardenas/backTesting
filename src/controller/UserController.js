@@ -12,7 +12,10 @@ function login(req, res) {
 }
 
 function register(req, res) {
-  const { fullName, username, email, password } = req.body;
+  let fullName= req.body.fn;
+  let username=req.body.un;
+  let email=req.body.email;
+  let password=req.body.password;
   UserService.register(fullName, username, email, password)
     .then((response) => {
       res.json(response);
