@@ -1,8 +1,8 @@
 const User = require("../models/User");
 
-async function login(username, password) {
+async function login(email, password) {
   try {
-    const user = await User.findOne({ username, password });
+    const user = await User.findOne({ email, password });
     if (user) {
       return { success: true, message: "Login successful" };
     } else {
