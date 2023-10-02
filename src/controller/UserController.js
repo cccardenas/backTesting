@@ -2,7 +2,7 @@ const UserService = require("../services/UserService");
 
 function login(req, res) {
   const { email, password } = req.query;
-  UserService.login(username, password)
+  UserService.login(email, password)
     .then((response) => {
       res.json(response);
     })
